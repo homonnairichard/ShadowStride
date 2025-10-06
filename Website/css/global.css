@@ -1,0 +1,132 @@
+/* ================== GLOBAL ================== */
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+        body { background-color:#111; color:#fff; }
+        a { text-decoration:none; }
+        button { font-family: inherit; }
+
+        /* ================== NAVBAR ================== */
+        nav {
+            position: fixed; top:0; left:0; width:100%;
+            background-color:#111; z-index:1000;
+            box-shadow:0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav ul {
+            display:flex; align-items:center; justify-content:flex-end;
+            list-style:none; margin:0; padding:0 50px; height:60px;
+        }
+        nav ul li:first-child { margin-right:auto; }
+        nav ul li a { color:#fff; padding:0 15px; font-weight:500; transition:0.3s; }
+        nav ul li a:hover { color:#ff4c4c; }
+        nav ul li button {
+            background-color:#ff4c4c; border:none; padding:8px 20px;
+            border-radius:6px; cursor:pointer; transition:0.3s;
+        }
+        nav ul li button a { color:white; }
+        nav ul li button:hover { background-color:#e03e3e; }
+
+        /* ================== HERO VIDEO ================== */
+        .hero { position:relative; width:100%; height:90vh; overflow:hidden; }
+        .hero-video {
+            position:absolute; top:50%; left:50%;
+            min-width:100%; min-height:100%;
+            width:auto; height:auto; transform:translate(-50%,-50%);
+            object-fit:cover; z-index:1;
+        }
+        .hero-content {
+            position:relative; z-index:2; text-align:center;
+            top:50%; transform:translateY(-50%);
+        }
+        .hero-content h2 { font-size:64px; margin-bottom:20px; text-shadow:0 2px 10px rgba(0,0,0,0.7);}
+        .hero-content button {
+            background-color:#ff4c4c; padding:12px 30px;
+            border:none; border-radius:8px; cursor:pointer; font-size:18px;
+        }
+        .hero-content button a { color:white; }
+        .hero-content button:hover { background-color:#e03e3e; }
+
+        /* ================== GAME DESCRIPTION ================== */
+        .hero-section {
+            display:flex; align-items:center; justify-content:space-between;
+            padding:80px 5%; gap:40px; flex-wrap:wrap;
+        }
+        .text-container { flex:1; min-width:280px; color:white; }
+        .text-container h2 { font-size:48px; margin-bottom:20px; text-shadow:0 2px 10px rgba(0,0,0,0.7);}
+        .text-container p { font-size:18px; line-height:1.6; }
+        .video-container {
+            flex:1; position:relative; min-width:280px; height:400px; overflow:hidden;
+            border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.3);
+        }
+        .video-container video { position:absolute; top:50%; left:50%;
+            min-width:100%; min-height:100%; transform:translate(-50%,-50%); object-fit:cover; }
+
+        /* ================== UCP ================== */
+        #ucp { padding:80px 5%; background-color:#f5f5f5; color:#111; }
+        .ucp-container { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;}
+        .ucp-text { flex:1; min-width:280px; }
+        .ucp-text h2 { font-size:36px; margin-bottom:20px; }
+        .ucp-text button { background-color:#ff4c4c; border:none; padding:12px 25px; border-radius:8px; cursor:pointer; transition:0.3s;}
+        .ucp-text button a { color:white; font-weight:bold; }
+        .ucp-text button:hover { background-color:#e03e3e; }
+        .ucp-image { flex:1; min-width:280px; }
+        .ucp-image img { width:100%; height:auto; border-radius:20px; clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%); box-shadow:0 10px 30px rgba(0,0,0,0.2); transition:transform 0.3s;}
+        .ucp-image img:hover { transform:scale(1.05); }
+
+        /* ================== CHARACTER ================== */
+        #character {
+            width:100%; min-height:80vh;
+            background-image:url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/31928ff8cfcdd791ab523fa3866335377ec3550f-3440x1020.jpg?auto=format&fit=fill&q=80&h=1020');
+            background-size:cover; background-position:center;
+            display:flex; align-items:center; justify-content:center;
+            padding:0 5%;
+        }
+        .character-hero {
+            max-width:800px; text-align:center;
+            background: rgba(17,17,17,0.5); padding:40px; border-radius:20px;
+        }
+        .character-hero h2 { font-size:48px; margin-bottom:20px;}
+        .character-hero p { font-size:18px; line-height:1.6;}
+
+        /* ================== MAPS ================== */
+        #maps { width:100%; padding:80px 5%; background:linear-gradient(to bottom,#e0f7fa,#00bfa5); text-align:center; color:#111; }
+        .maps-container h2 { font-size:36px; margin-bottom:20px; }
+        .maps-container p { font-size:18px; margin-bottom:40px; }
+        .map-placeholder { position:relative; width:100%; max-width:1000px; height:400px; margin:0 auto; background:url('https://upload.wikimedia.org/wikipedia/commons/3/3f/World_map_blank_without_borders.svg') center/cover no-repeat; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+        .map-pin { position:absolute; width:20px; height:20px; background-color:#ff4c4c; border-radius:50%; border:2px solid white; cursor:pointer; transition: transform 0.3s;}
+        .map-pin:hover { transform:scale(1.5); }
+
+        /* ================== TEAM ================== */
+        #team { padding:80px 5%; background-color:#111; text-align:center; color:white; }
+        .team-container h2 { font-size:36px; margin-bottom:50px; }
+        .team-members { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+        .team-member {
+            background-color:#1a1a1a; border-radius:15px; padding:20px; width:280px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.2); transition:transform 0.3s, box-shadow 0.3s;
+        }
+        .team-member img { width:100%; border-radius:50%; margin-bottom:20px; }
+        .team-member h3 { font-size:24px; margin-bottom:10px; }
+        .team-member p { font-size:16px; color:#ccc; }
+        .team-member:hover { transform:translateY(-10px); box-shadow:0 15px 40px rgba(255,76,76,0.5); }
+
+        /* ================== BUTTON & IMAGE CARD EFFECTS ================== */
+        .primary-btn {
+            background-color:#ff4c4c; color:white; border:none; padding:12px 30px; border-radius:10px;
+            cursor:pointer; font-weight:bold; font-size:18px; transition:all 0.3s;
+        }
+        .primary-btn:hover { background-color:#e03e3e; box-shadow:0 0 15px #ff4c4c; transform:translateY(-2px); }
+
+        .image-card { position:relative; overflow:hidden; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s;}
+        .image-card img { width:100%; display:block; transition:transform 0.5s;}
+        .image-card:hover img { transform:scale(1.05); }
+        .image-card .overlay {
+            position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(17,17,17,0.5);
+            color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; opacity:0; transition:opacity 0.3s;
+        }
+        .image-card:hover .overlay { opacity:1; }
+
+        /* ================== RESPONSIVE ================== */
+        @media(max-width:768px) {
+            .hero-section, .ucp-container, .team-members { flex-direction:column; align-items:center;}
+            .text-container, .ucp-text, .ucp-image, .team-member { min-width:100%; max-width:500px; }
+            .hero-content h2 { font-size:42px; }
+            .character-hero h2 { font-size:36px; }
+        }
