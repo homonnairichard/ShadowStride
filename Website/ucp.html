@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ucp.css">
+    <title>User Controll Panel</title>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li></li>
+            <li><a href="#team">Csapatról</a></li>
+            <li><a href="ucp.html">UCP</a></li>
+            <li><button><a href="game.html">Játssz most!</a></button></li>
+        </ul>
+    </nav>
+    
+    <main>
+    <div id="logreg">
+        <h3 id="form-title">Jelentkezz be!</h3>
+        
+        <form id="login-form" class="active" action="login.php" method="POST">
+            <label for="login_username">Felhasználónév:</label>
+            <input type="text" name="username" id="login_username" required>
+            <label for="login_password">Jelszó:</label>
+            <input type="password" name="password" id="login_password" required>
+
+            <button type="submit">Bejelentkezés</button>
+
+            <span class="switch-link" id="to-register">Nincs fiókod? Regisztrálj!</span>
+        </form>
+        
+        <form id="register-form" action="register.php" method="POST">
+            <label for="reg_username">Felhasználónév:</label>
+            <input type="text" name="username" id="reg_username" required>
+            <label for="reg_email">Email:</label>
+            <input type="email" name="email" id="reg_email" required>
+            <label for="reg_password">Jelszó:</label>
+            <input type="password" name="password" id="reg_password" required>
+            
+            <button type="submit">Regisztráció</button>
+<br>
+            <span class="switch-link" id="to-login">Már van fiókod? Jelentkezz be!</span>
+        </form>
+    </div>
+</main>
+<script>
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const toRegister = document.getElementById('to-register');
+    const toLogin = document.getElementById('to-login');
+    const formTitle = document.getElementById('form-title');
+
+    toRegister.addEventListener('click', () => {
+        loginForm.classList.remove('active');
+        registerForm.classList.add('active');
+        formTitle.textContent = 'Regisztráció';
+    });
+
+    toLogin.addEventListener('click', () => {
+        registerForm.classList.remove('active');
+        loginForm.classList.add('active');
+        formTitle.textContent = 'Jelentkezz be!';
+    });
+</script>
+    </main>
+
+</body>
+</html>
